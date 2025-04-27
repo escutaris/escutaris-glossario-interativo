@@ -1,4 +1,3 @@
-
 import React from 'react';
 import GlossaryHeader from '@/components/GlossaryHeader';
 import IntroSection from '@/components/IntroSection';
@@ -6,7 +5,6 @@ import GlossarySection from '@/components/GlossarySection';
 import GlossaryFooter from '@/components/GlossaryFooter';
 
 const Index = () => {
-  // Data for the glossary sections
   const fundamentalConcepts = [
     {
       id: "fatores-psicossociais",
@@ -37,6 +35,12 @@ const Index = () => {
         content: "Uma empresa que implementa o GRO deve identificar fatores como pressão por prazos, conflitos entre equipes e sobrecarga de trabalho, avaliar seus impactos, implementar medidas como redistribuição de tarefas e treinamento em gestão de conflitos, e monitorar a eficácia dessas ações."
       },
       iconName: "icon-management"
+    },
+    {
+      id: "consequencia",
+      title: "Consequência (Doença ou Agravo Psicossocial)",
+      description: "Dano concreto à saúde do trabalhador, resultante da exposição a fatores psicossociais não controlados. Exemplos: estresse crônico, depressão, síndrome de burnout, transtornos relacionados ao estresse.",
+      iconName: "icon-stress"
     }
   ];
 
@@ -70,6 +74,54 @@ const Index = () => {
         content: "Um gestor que constantemente humilha um subordinado em público, atribui tarefas impossíveis de serem realizadas, isola-o dos colegas ou desqualifica seu trabalho sem justificativa técnica está praticando assédio moral."
       },
       iconName: "icon-harassment"
+    },
+    {
+      id: "carga-mental",
+      title: "Carga Mental",
+      description: "Exigência psicológica relacionada à quantidade e à complexidade das tarefas.",
+      iconName: "icon-mental-load"
+    },
+    {
+      id: "demandas-trabalho",
+      title: "Demandas de Trabalho",
+      description: "Quantidade, dificuldade e tempo para realizar as tarefas atribuídas.",
+      iconName: "icon-management"
+    },
+    {
+      id: "excesso-demandas",
+      title: "Excesso de Demandas (Sobrecarga)",
+      description: "Situação em que a carga de trabalho ultrapassa a capacidade de execução segura e saudável.",
+      iconName: "icon-stress"
+    },
+    {
+      id: "falta-autonomia",
+      title: "Falta de Autonomia",
+      description: "Restrição do poder de decisão do trabalhador sobre como e quando executar suas tarefas.",
+      iconName: "icon-autonomy"
+    },
+    {
+      id: "justica-organizacional",
+      title: "Justiça Organizacional",
+      description: "Percepção dos trabalhadores sobre equidade e transparência nos processos internos.",
+      iconName: "icon-balance"
+    },
+    {
+      id: "organizacao-trabalho",
+      title: "Organização do Trabalho",
+      description: "Forma como o trabalho é planejado, dividido e executado na empresa.",
+      iconName: "icon-organization"
+    },
+    {
+      id: "ambiguidade-papeis",
+      title: "Ambiguidade de Papéis",
+      description: "Falta de clareza sobre as responsabilidades, expectativas e objetivos do cargo.",
+      iconName: "icon-management"
+    },
+    {
+      id: "conflito-papeis",
+      title: "Conflito de Papéis",
+      description: "Situação em que o trabalhador enfrenta exigências incompatíveis ou conflitantes.",
+      iconName: "icon-stress"
     }
   ];
 
@@ -92,6 +144,48 @@ const Index = () => {
         title: "Exemplo Prático:",
         content: "Uma AET pode revelar que, embora o procedimento formal (trabalho prescrito) estabeleça determinados passos para uma tarefa, na prática (trabalho real) os trabalhadores desenvolvem estratégias diferentes para lidar com variabilidades e imprevistos, o que pode gerar sobrecarga mental."
       },
+      iconName: "icon-ergonomics"
+    },
+    {
+      id: "inventario-riscos",
+      title: "Inventário de Riscos Psicossociais",
+      description: "Documento que descreve os perigos psicossociais identificados, suas avaliações de risco e medidas de controle previstas.",
+      iconName: "icon-inventory"
+    },
+    {
+      id: "apr",
+      title: "Avaliação Preliminar de Riscos (APR)",
+      description: "Processo inicial de identificação dos fatores de risco, sem aprofundamento analítico, para priorizar intervenções.",
+      iconName: "icon-assessment"
+    },
+    {
+      id: "indicadores-saude",
+      title: "Indicadores de Saúde Mental e Bem-Estar",
+      description: "Dados quantitativos (ex.: afastamentos por transtornos mentais, pesquisas de clima organizacional) usados para mapear sinais de riscos psicossociais.",
+      iconName: "icon-assessment"
+    },
+    {
+      id: "entrevistas-individuais",
+      title: "Entrevistas Individuais",
+      description: "Técnica qualitativa para entender percepções de trabalhadores sobre o ambiente psicossocial.",
+      iconName: "icon-individual"
+    },
+    {
+      id: "grupos-focais",
+      title: "Grupos Focais",
+      description: "Discussões em grupo estruturadas para explorar aspectos psicossociais comuns e pontos críticos.",
+      iconName: "icon-support"
+    },
+    {
+      id: "questionarios-padronizados",
+      title: "Questionários Padronizados",
+      description: "Instrumentos estruturados que avaliam riscos psicossociais com base em escalas específicas (ex.: HSE-IT, JCQ, COPSOQ, ISTAS21).",
+      iconName: "icon-assessment"
+    },
+    {
+      id: "observacao-direta",
+      title: "Observação Direta das Atividades",
+      description: "Técnica em que o avaliador acompanha o trabalho para identificar fatores psicossociais no contexto real.",
       iconName: "icon-ergonomics"
     }
   ];
