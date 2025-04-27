@@ -14,14 +14,11 @@ const GlossaryHeader = () => {
               Termos Técnicos em Fatores Psicossociais para Profissionais de SST
             </p>
           </div>
-          <div>
-            <img 
-              src="/placeholder.svg" 
-              alt="Escutaris Logo" 
-              className="h-12 md:h-16"
-              // You can replace with your actual logo
-            />
-          </div>
+          <img 
+            src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png"
+            alt="Escutaris Logo" 
+            className="h-12 md:h-16"
+          />
         </div>
       </div>
     </header>
@@ -29,3 +26,4 @@ const GlossaryHeader = () => {
 };
 
 export default GlossaryHeader;
+
