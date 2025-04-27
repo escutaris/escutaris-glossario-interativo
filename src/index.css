@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,25 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bgLight text-textDark;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
   }
 }
+
+/* Custom styles for accordion */
+.accordion-content {
+  overflow: hidden;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered animation for glossary terms */
+.animate-fade-in {
+  animation-fill-mode: both;
+}
+
+.term:nth-child(1) { animation-delay: 0.1s; }
+.term:nth-child(2) { animation-delay: 0.2s; }
+.term:nth-child(3) { animation-delay: 0.3s; }
+.term:nth-child(4) { animation-delay: 0.4s; }
+.term:nth-child(5) { animation-delay: 0.5s; }
