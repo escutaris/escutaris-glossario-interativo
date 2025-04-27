@@ -1,26 +1,26 @@
 
-import { Link as LinkIcon } from "lucide-react";
+import { Globe, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const ContactLinks = () => {
   const links = [
-    { label: "Site", url: "https://www.escutaris.com.br/" },
-    { label: "Instagram", url: "https://www.instagram.com/escutarissaudemental/" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/escutaris/" },
-    { label: "Youtube", url: "https://www.youtube.com/@Escutaris" }
+    { icon: Globe, url: "https://www.escutaris.com.br/" },
+    { icon: Instagram, url: "https://www.instagram.com/escutarissaudemental/" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/escutaris/" },
+    { icon: Youtube, url: "https://www.youtube.com/@Escutaris" }
   ];
 
   return (
-    <div className="space-y-2">
+    <div className="flex gap-4">
       {links.map((link) => (
         <a
-          key={link.label}
+          key={link.url}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-primary-dark hover:text-primary transition-colors"
+          className="text-primary-dark hover:text-primary transition-colors"
         >
-          <LinkIcon size={16} />
-          <span>{link.label}</span>
+          <link.icon size={24} />
+          <span className="sr-only">Link to {link.url}</span>
         </a>
       ))}
     </div>
