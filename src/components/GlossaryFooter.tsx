@@ -1,9 +1,13 @@
+
 import React from 'react';
 import ContactLinks from './ContactLinks';
 const GlossaryFooter = () => {
   return <footer className="py-8 md:py-12 border-t border-gray-200">
       <div className="container mx-auto px-4 text-center">
-        <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-16 mx-auto mb-4 object-cover" />
+        <div className="flex justify-center items-center space-x-6 mb-4">
+          <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-16 object-cover" />
+          <img src="/lovable-uploads/9f12549d-2184-4ff8-8176-57f37a956a62.png" alt="Viva Logo" className="h-16 object-cover" />
+        </div>
         <div className="max-w-2xl mx-auto space-y-6">
           <div>
             <h3 className="font-semibold text-primary-dark mb-2 text-2xl">Fale com a Escutaris</h3>
