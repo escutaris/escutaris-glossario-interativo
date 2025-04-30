@@ -1,4 +1,3 @@
-
 import React from 'react';
 const GlossaryHeader = () => {
   return <header className="bg-white shadow-custom sticky top-0 z-50">
@@ -10,10 +9,7 @@ const GlossaryHeader = () => {
               Termos Técnicos em Fatores Psicossociais para Profissionais de SST
             </p>
           </div>
-          <div className="flex items-center space-x-4">
-            <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-12 md:h-16" />
-            <img src="/lovable-uploads/9f12549d-2184-4ff8-8176-57f37a956a62.png" alt="Viva Logo" className="h-12 md:h-16" />
-          </div>
+          <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-12 md:h-16" />
         </div>
       </div>
     </header>;
