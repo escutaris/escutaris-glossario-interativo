@@ -14,7 +14,13 @@ import { GlossaryTerm } from '@/types/glossaryTypes';
 
 const Index = () => {
   // Estado para armazenar os resultados da pesquisa
-  const [searchResults, setSearchResults] = useState({
+  const [searchResults, setSearchResults] = useState<{
+    fundamentalConcepts: GlossaryTerm[];
+    specificTerms: GlossaryTerm[];
+    evaluationTools: GlossaryTerm[];
+    legalAspects: GlossaryTerm[];
+    isSearching: boolean;
+  }>({
     fundamentalConcepts: fundamentalConcepts,
     specificTerms: specificTerms,
     evaluationTools: evaluationTools,
