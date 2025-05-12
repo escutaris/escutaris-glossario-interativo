@@ -12,7 +12,7 @@ const GlossaryHeader = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-custom sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-custom sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
@@ -27,56 +27,64 @@ const GlossaryHeader = () => {
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700">Navegação</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 focus:ring-2 focus:ring-primary/50">
+                    Navegação
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent className="dark:bg-gray-800">
-                    <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px] dark:text-gray-100">
-                      <li>
-                        <button 
-                          onClick={() => scrollToSection("intro")}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                        >
-                          Introdução
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                          onClick={() => scrollToSection("conceitos-fundamentais")}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                        >
-                          Conceitos Fundamentais
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                          onClick={() => scrollToSection("termos-especificos")}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                        >
-                          Termos Específicos
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                          onClick={() => scrollToSection("instrumentos-avaliacao")}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                        >
-                          Instrumentos de Avaliação
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                          onClick={() => scrollToSection("aspectos-legais")}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                        >
-                          Aspectos Legais e Normativos
-                        </button>
-                      </li>
-                    </ul>
+                    <nav>
+                      <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px] dark:text-gray-100" role="menu">
+                        <li role="menuitem">
+                          <button 
+                            onClick={() => scrollToSection("intro")}
+                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          >
+                            Introdução
+                          </button>
+                        </li>
+                        <li role="menuitem">
+                          <button 
+                            onClick={() => scrollToSection("conceitos-fundamentais")}
+                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          >
+                            Conceitos Fundamentais
+                          </button>
+                        </li>
+                        <li role="menuitem">
+                          <button 
+                            onClick={() => scrollToSection("termos-especificos")}
+                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          >
+                            Termos Específicos
+                          </button>
+                        </li>
+                        <li role="menuitem">
+                          <button 
+                            onClick={() => scrollToSection("instrumentos-avaliacao")}
+                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          >
+                            Instrumentos de Avaliação
+                          </button>
+                        </li>
+                        <li role="menuitem">
+                          <button 
+                            onClick={() => scrollToSection("aspectos-legais")}
+                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          >
+                            Aspectos Legais e Normativos
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
             <ThemeToggle />
-            <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-10 md:h-12 lg:h-16" />
+            <img 
+              src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" 
+              alt="Logotipo da Escutaris - Empresa especializada em saúde mental e fatores psicossociais" 
+              className="h-10 md:h-12 lg:h-16" 
+            />
           </div>
         </div>
       </div>

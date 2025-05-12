@@ -17,14 +17,18 @@ const GlossarySearch = ({ onSearch }: GlossarySearchProps) => {
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto mb-6">
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+    <div className="relative w-full max-w-md mx-auto mb-6" role="search">
+      <label htmlFor="glossary-search" className="sr-only">
+        Pesquisar termos no glossário
+      </label>
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" aria-hidden="true">
         <Search size={18} className="text-textLight dark:text-gray-400" />
       </div>
       <Input
-        type="text"
+        id="glossary-search"
+        type="search"
         placeholder="Pesquisar termos..."
-        className="pl-10 bg-white dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 focus-visible:ring-primary"
+        className="pl-10 bg-white dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 focus-visible:ring-primary focus:ring-2 focus:ring-offset-2"
         value={searchTerm}
         onChange={handleChange}
         aria-label="Pesquisar termos no glossário"

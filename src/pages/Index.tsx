@@ -6,6 +6,7 @@ import GlossarySection from '@/components/GlossarySection';
 import GlossaryFooter from '@/components/GlossaryFooter';
 import GlossarySearch from '@/components/GlossarySearch';
 import MobileNavMenu from '@/components/MobileNavMenu';
+import SkipLink from '@/components/SkipLink';
 import { fundamentalConcepts } from '@/data/fundamentalConcepts';
 import { specificTerms } from '@/data/specificTerms';
 import { evaluationTools } from '@/data/evaluationTools';
@@ -62,22 +63,38 @@ const Index = () => {
     });
   };
 
+  // Conta o total de resultados encontrados
+  const totalResults = searchResults.isSearching ? 
+    searchResults.fundamentalConcepts.length + 
+    searchResults.specificTerms.length + 
+    searchResults.evaluationTools.length + 
+    searchResults.legalAspects.length : 0;
+
   return (
     <div className="min-h-screen bg-bgLight dark:bg-gray-950 flex flex-col">
+      <SkipLink />
       <GlossaryHeader />
       
-      <main className="flex-grow">
+      <main id="conteudo-principal" tabIndex={-1} className="flex-grow">
         <IntroSection />
         
         <div className="container mx-auto px-4 py-4">
           <GlossarySearch onSearch={handleSearch} />
           
-          {searchResults.isSearching && 
-            (searchResults.fundamentalConcepts.length === 0 &&
-            searchResults.specificTerms.length === 0 &&
-            searchResults.evaluationTools.length === 0 &&
-            searchResults.legalAspects.length === 0) && (
-            <div className="text-center py-10">
+          {searchResults.isSearching && (
+            <div 
+              aria-live="polite" 
+              aria-atomic="true" 
+              className="sr-only"
+            >
+              {totalResults === 0 
+                ? "Nenhum resultado encontrado para sua pesquisa." 
+                : `${totalResults} resultados encontrados para sua pesquisa.`}
+            </div>
+          )}
+          
+          {searchResults.isSearching && totalResults === 0 && (
+            <div className="text-center py-10" role="status">
               <p className="text-lg text-textDark dark:text-gray-300">
                 Nenhum termo encontrado na sua pesquisa.
               </p>
