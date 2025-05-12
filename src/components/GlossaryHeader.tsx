@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
+import ShareButton from './ShareButton';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 
 const GlossaryHeader = () => {
@@ -24,6 +25,7 @@ const GlossaryHeader = () => {
             </p>
           </div>
           <div className="flex items-center space-x-4">
+            <ShareButton />
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>

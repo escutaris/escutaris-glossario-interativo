@@ -7,6 +7,7 @@ import GlossaryFooter from '@/components/GlossaryFooter';
 import GlossarySearch from '@/components/GlossarySearch';
 import MobileNavMenu from '@/components/MobileNavMenu';
 import SkipLink from '@/components/SkipLink';
+import { Toaster } from '@/components/ui/toaster';
 import { fundamentalConcepts } from '@/data/fundamentalConcepts';
 import { specificTerms } from '@/data/specificTerms';
 import { evaluationTools } from '@/data/evaluationTools';
@@ -132,6 +133,7 @@ const Index = () => {
       
       <GlossaryFooter />
       <MobileNavMenu />
+      <Toaster />
     </div>
   );
 };
