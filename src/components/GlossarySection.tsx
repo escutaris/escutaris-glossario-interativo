@@ -2,20 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import GlossaryTerm from './GlossaryTerm';
-
-interface GlossarySectionProps {
-  title: string;
-  terms: Array<{
-    id: string;
-    title: string;
-    description: string;
-    example?: {
-      title: string;
-      content: string;
-    };
-    iconName?: string;
-  }>;
-}
+import { GlossarySectionProps } from '@/types/glossaryTypes';
 
 const GlossarySection = ({ title, terms }: GlossarySectionProps) => {
   return (
