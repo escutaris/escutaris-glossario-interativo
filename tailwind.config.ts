@@ -38,7 +38,7 @@ export default {
 					foreground: '#ffffff',
 				},
 				textDark: '#333',
-				textLight: '#666',
+				textLight: '#555', // Melhorado o contraste de #666 para #555
 				bgLight: '#f9f9f9',
 				white: '#fff',
 				destructive: {
