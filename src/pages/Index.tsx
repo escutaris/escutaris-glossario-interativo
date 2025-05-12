@@ -1,4 +1,3 @@
-
 import React from 'react';
 import GlossaryHeader from '@/components/GlossaryHeader';
 import IntroSection from '@/components/IntroSection';
@@ -89,7 +88,7 @@ const Index = () => {
     {
       id: "demandas-trabalho",
       title: "Demandas de Trabalho",
-      description: "Quantidade, dificuldade e tempo para realizar as tarefas atribuídas. O problema não está no "muito trabalho", mas no desequilíbrio entre o que é exigido e os recursos disponíveis para dar conta — sejam eles cognitivos, emocionais ou organizacionais.",
+      description: 'Quantidade, dificuldade e tempo para realizar as tarefas atribuídas. O problema não está no "muito trabalho", mas no desequilíbrio entre o que é exigido e os recursos disponíveis para dar conta — sejam eles cognitivos, emocionais ou organizacionais.',
       example: {
         title: "Exemplo Prático:",
         content: "Alta demanda: Um analista precisa entregar relatórios diários com alto grau de detalhamento, atende a múltiplas reuniões consecutivas e ainda responde mensagens fora do horário de expediente, com metas que não cabem no tempo disponível. Acumula atividades de 2 a 3 colegas que não estão mais no setor.\nBaixa demanda: Um técnico passa a maior parte do expediente sem tarefas atribuídas, com longos períodos de ociosidade. Ele sente que suas habilidades são desperdiçadas e se questiona sobre sua utilidade para a equipe.\nDemanda moderada ou adequada: nível de exigência compatível com as capacidades e recursos do trabalhador. Essa é a condição ideal, pois favorece engajamento, produtividade e saúde."
@@ -284,4 +283,3 @@ const Index = () => {
 };
 
 export default Index;
-
