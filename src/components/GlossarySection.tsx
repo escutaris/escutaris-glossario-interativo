@@ -45,10 +45,10 @@ const GlossarySection = ({ title, terms, id }: GlossarySectionProps & { id: stri
   return (
     <section id={id} className="py-6 md:py-10 scroll-mt-20" ref={sectionRef} aria-labelledby={`section-title-${id}`}>
       <div className="container mx-auto px-4">
-        <Card className="bg-white dark:bg-gray-800 shadow-custom">
+        <Card className="bg-card shadow-custom">
           <CardHeader className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
             <CardTitle 
-              className="text-primary-dark dark:text-gray-100 text-xl sm:text-2xl md:text-3xl border-b-2 border-primary dark:border-primary/70 pb-2"
+              className="text-card-foreground text-xl sm:text-2xl md:text-3xl border-b-2 border-primary pb-2"
               id={`section-title-${id}`}
             >
               {title}
@@ -57,7 +57,7 @@ const GlossarySection = ({ title, terms, id }: GlossarySectionProps & { id: stri
               variant="outline" 
               size="sm" 
               onClick={toggleAllExpanded}
-              className="mt-2 sm:mt-0 text-xs sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 focus:ring-2 focus:ring-primary/50"
+              className="mt-2 sm:mt-0 text-xs sm:text-sm focus:ring-2 focus:ring-primary/50"
               aria-pressed={isAllExpanded}
             >
               {isAllExpanded ? "Fechar todos" : "Expandir todos"}
@@ -77,7 +77,7 @@ const GlossarySection = ({ title, terms, id }: GlossarySectionProps & { id: stri
               ))}
               
               {terms.length === 0 && (
-                <p className="text-center py-6 text-textLight dark:text-gray-400">
+                <p className="text-center py-6 text-muted-foreground">
                   Nenhum termo encontrado nesta seção.
                 </p>
               )}

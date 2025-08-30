@@ -31,41 +31,41 @@ const MobileNavMenu = () => {
       {isOpen && (
         <div 
           id="mobile-nav-menu"
-          className="absolute bottom-16 right-0 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4 w-48 animate-fade-in"
+          className="absolute bottom-16 right-0 bg-card rounded-lg shadow-xl p-4 w-48 animate-fade-in border"
           role="menu"
         >
           <div className="flex flex-col gap-2">
             <button
               onClick={() => scrollToSection("intro")}
-              className="text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="text-left px-3 py-2 hover:bg-accent rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               role="menuitem"
             >
               Introdução
             </button>
             <button
               onClick={() => scrollToSection("conceitos-fundamentais")}
-              className="text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="text-left px-3 py-2 hover:bg-accent rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               role="menuitem"
             >
               Conceitos Fundamentais
             </button>
             <button
               onClick={() => scrollToSection("termos-especificos")}
-              className="text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="text-left px-3 py-2 hover:bg-accent rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               role="menuitem"
             >
               Termos Específicos
             </button>
             <button
               onClick={() => scrollToSection("instrumentos-avaliacao")}
-              className="text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="text-left px-3 py-2 hover:bg-accent rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               role="menuitem"
             >
               Instrumentos de Avaliação
             </button>
             <button
               onClick={() => scrollToSection("aspectos-legais")}
-              className="text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="text-left px-3 py-2 hover:bg-accent rounded-md transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               role="menuitem"
             >
               Aspectos Legais

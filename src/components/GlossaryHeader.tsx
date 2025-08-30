@@ -13,14 +13,14 @@ const GlossaryHeader = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-custom sticky top-0 z-50" role="banner">
+    <header className="bg-card shadow-custom sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
-            <h1 className="text-primary-dark dark:text-gray-100 font-bold text-xl md:text-2xl lg:text-3xl sm:text-lg">
+            <h1 className="text-card-foreground font-bold text-xl md:text-2xl lg:text-3xl sm:text-lg">
               Glossário Interativo
             </h1>
-            <p className="text-textLight dark:text-gray-300 text-sm md:text-base">
+            <p className="text-muted-foreground text-sm md:text-base">
               Termos Técnicos em Fatores Psicossociais para Profissionais de SST
             </p>
           </div>
@@ -29,16 +29,16 @@ const GlossaryHeader = () => {
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 focus:ring-2 focus:ring-primary/50">
+                  <NavigationMenuTrigger className="focus:ring-2 focus:ring-primary/50">
                     Navegação
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="dark:bg-gray-800">
+                  <NavigationMenuContent>
                     <nav>
-                      <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px] dark:text-gray-100" role="menu">
+                      <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px]" role="menu">
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("intro")}
-                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
                           >
                             Introdução
                           </button>
@@ -46,7 +46,7 @@ const GlossaryHeader = () => {
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("conceitos-fundamentais")}
-                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
                           >
                             Conceitos Fundamentais
                           </button>
@@ -54,7 +54,7 @@ const GlossaryHeader = () => {
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("termos-especificos")}
-                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
                           >
                             Termos Específicos
                           </button>
@@ -62,7 +62,7 @@ const GlossaryHeader = () => {
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("instrumentos-avaliacao")}
-                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
                           >
                             Instrumentos de Avaliação
                           </button>
@@ -70,7 +70,7 @@ const GlossaryHeader = () => {
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("aspectos-legais")}
-                            className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
                           >
                             Aspectos Legais e Normativos
                           </button>

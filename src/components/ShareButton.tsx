@@ -49,7 +49,7 @@ const ShareButton = () => {
       variant="outline" 
       size="sm" 
       onClick={handleShare}
-      className="ml-2 bg-white dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 border-gray-200 dark:border-gray-700"
+      className="ml-2"
       aria-label="Compartilhar glossário"
     >
       <Share size={18} className="mr-1" />

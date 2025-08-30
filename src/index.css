@@ -97,7 +97,7 @@
   }
 
   body {
-    @apply bg-bgLight text-textDark;
+    @apply bg-background text-foreground;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
   }

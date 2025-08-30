@@ -72,7 +72,7 @@ const Index = () => {
     searchResults.legalAspects.length : 0;
 
   return (
-    <div className="min-h-screen bg-bgLight dark:bg-gray-950 flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <SkipLink />
       <GlossaryHeader />
       
@@ -96,10 +96,10 @@ const Index = () => {
           
           {searchResults.isSearching && totalResults === 0 && (
             <div className="text-center py-10" role="status">
-              <p className="text-lg text-textDark dark:text-gray-300">
+              <p className="text-lg text-foreground">
                 Nenhum termo encontrado na sua pesquisa.
               </p>
-              <p className="text-textLight dark:text-gray-400 mt-2">
+              <p className="text-muted-foreground mt-2">
                 Tente usar palavras-chave diferentes ou verifique a ortografia.
               </p>
             </div>
@@ -133,7 +133,6 @@ const Index = () => {
       
       <GlossaryFooter />
       <MobileNavMenu />
-      <Toaster />
     </div>
   );
 };
