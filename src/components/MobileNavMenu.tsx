@@ -20,18 +20,18 @@ const MobileNavMenu = () => {
         onClick={() => setIsOpen(!isOpen)}
         variant="secondary"
         size="icon"
-        className="rounded-full shadow-lg bg-primary text-white h-12 w-12 focus:ring-2 focus:ring-offset-2 focus:ring-primary/50"
+        className="rounded-full shadow-lg bg-primary text-primary-foreground h-12 w-12 focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 hover:bg-primary/90"
         aria-expanded={isOpen}
         aria-controls="mobile-nav-menu"
         aria-label={isOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
       >
-        {isOpen ? <X size={24} /> : <List size={24} />}
+        {isOpen ? <X size={20} /> : <List size={20} />}
       </Button>
 
       {isOpen && (
         <div 
           id="mobile-nav-menu"
-          className="absolute bottom-16 right-0 bg-card rounded-lg shadow-xl p-4 w-48 animate-fade-in border"
+          className="absolute bottom-16 right-0 bg-card rounded-lg shadow-xl p-3 w-52 sm:w-56 animate-fade-in border max-h-80 overflow-y-auto"
           role="menu"
         >
           <div className="flex flex-col gap-2">

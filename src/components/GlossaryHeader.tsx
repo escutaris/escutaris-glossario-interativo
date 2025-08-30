@@ -16,15 +16,15 @@ const GlossaryHeader = () => {
     <header className="bg-card shadow-custom sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
-            <h1 className="text-card-foreground font-bold text-xl md:text-2xl lg:text-3xl sm:text-lg">
+          <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
+            <h1 className="text-card-foreground font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Glossário Interativo
             </h1>
-            <p className="text-muted-foreground text-sm md:text-base">
+            <p className="text-muted-foreground text-sm md:text-base max-w-md md:max-w-none">
               Termos Técnicos em Fatores Psicossociais para Profissionais de SST
             </p>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center md:justify-end">
             <ShareButton />
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
@@ -34,7 +34,7 @@ const GlossaryHeader = () => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <nav>
-                      <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px]" role="menu">
+                      <ul className="grid gap-3 p-4 w-80 sm:w-96 md:w-[500px]" role="menu">
                         <li role="menuitem">
                           <button 
                             onClick={() => scrollToSection("intro")}
@@ -85,7 +85,7 @@ const GlossaryHeader = () => {
             <img 
               src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" 
               alt="Logotipo da Escutaris - Empresa especializada em saúde mental e fatores psicossociais" 
-              className="h-10 md:h-12 lg:h-16" 
+              className="h-8 sm:h-10 md:h-12 lg:h-16 flex-shrink-0" 
             />
           </div>
         </div>
