@@ -14,17 +14,17 @@ const GlossaryHeader = () => {
 
   return (
     <header className="bg-card shadow-custom sticky top-0 z-50" role="banner">
-      <div className="container mx-auto px-4 py-4 md:py-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
-            <h1 className="text-card-foreground font-bold text-xl md:text-2xl lg:text-3xl sm:text-lg">
+      <div className="container mx-auto px-4 py-3 sm:py-4 md:py-6">
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+          <div className="text-center md:text-left">
+            <h1 className="text-card-foreground font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Glossário Interativo
             </h1>
-            <p className="text-muted-foreground text-sm md:text-base">
+            <p className="text-muted-foreground text-xs sm:text-sm md:text-base mt-1">
               Termos Técnicos em Fatores Psicossociais para Profissionais de SST
             </p>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-center md:justify-end space-x-2 sm:space-x-4">
             <ShareButton />
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
@@ -85,7 +85,7 @@ const GlossaryHeader = () => {
             <img 
               src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" 
               alt="Logotipo da Escutaris - Empresa especializada em saúde mental e fatores psicossociais" 
-              className="h-10 md:h-12 lg:h-16" 
+              className="h-8 sm:h-10 md:h-12 lg:h-16" 
             />
           </div>
         </div>

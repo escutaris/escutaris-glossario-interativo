@@ -17,7 +17,7 @@ const GlossarySearch = ({ onSearch }: GlossarySearchProps) => {
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto mb-6" role="search">
+    <div className="relative w-full max-w-lg mx-auto mb-4 sm:mb-6" role="search">
       <label htmlFor="glossary-search" className="sr-only">
         Pesquisar termos no glossário
       </label>
