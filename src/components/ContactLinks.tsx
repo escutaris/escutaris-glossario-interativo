@@ -17,10 +17,10 @@ const ContactLinks = () => {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="text-primary hover:text-secondary transition-colors p-2 rounded-full hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
           aria-label={link.label}
         >
-          <link.icon size={18} className="sm:size-20 md:size-24" />
+          <link.icon size={20} />
           <span className="sr-only">{link.label}</span>
         </a>
       ))}
