@@ -79,7 +79,7 @@ const Index = () => {
       <main id="conteudo-principal" tabIndex={-1} className="flex-grow">
         <IntroSection />
         
-        <div className="container mx-auto px-4 py-4 sm:py-6">
+        <div className="container mx-auto px-4 py-4">
           <GlossarySearch onSearch={handleSearch} />
           
           {searchResults.isSearching && (
@@ -95,11 +95,11 @@ const Index = () => {
           )}
           
           {searchResults.isSearching && totalResults === 0 && (
-            <div className="text-center py-8 sm:py-10 px-4" role="status">
-              <p className="text-base sm:text-lg text-foreground">
+            <div className="text-center py-10" role="status">
+              <p className="text-lg text-foreground">
                 Nenhum termo encontrado na sua pesquisa.
               </p>
-              <p className="text-muted-foreground mt-2 text-sm sm:text-base">
+              <p className="text-muted-foreground mt-2">
                 Tente usar palavras-chave diferentes ou verifique a ortografia.
               </p>
             </div>
