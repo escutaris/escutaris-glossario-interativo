@@ -14,22 +14,22 @@ const GlossaryTerm = ({
   const contentId = `term-content-${id}`;
 
   return (
-    <div className="mb-4 sm:mb-6 border-l-4 border-primary pl-3 sm:pl-4 md:pl-6 animate-fade-in focus-within:bg-muted/10 hover:bg-muted/10 transition-colors rounded-r-md">
+    <div className="mb-6 border-l-4 border-primary dark:border-primary/70 pl-3 sm:pl-4 md:pl-6 animate-fade-in focus-within:bg-secondary/5 hover:bg-secondary/5 transition-colors rounded-r-md">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value={id} className="border-none">
-          <AccordionTrigger
-            className="py-2 sm:py-3 hover:no-underline group focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md text-left"
+          <AccordionTrigger 
+            className="py-2 hover:no-underline group focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md"
             id={headerId}
             aria-controls={contentId}
           >
-            <h3 className="text-card-foreground text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-left flex items-center leading-tight">
+            <h3 className="text-card-foreground text-base sm:text-lg md:text-xl font-semibold text-left flex items-center">
               {iconName && (
-                 <span className="mr-2 sm:mr-3 text-primary flex-shrink-0" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-5 sm:h-5 md:w-6 md:h-6">
+                <span className="mr-2 text-primary" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-5 sm:h-5 md:w-6 md:h-6">
                     <circle cx="12" cy="12" r="10" />
                     <path d="m9 12 2 2 4-4" />
                   </svg>
-                 </span>
+                </span>
               )}
               {title}
             </h3>

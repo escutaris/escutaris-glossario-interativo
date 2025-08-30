@@ -10,17 +10,17 @@ const ContactLinks = () => {
   ];
 
   return (
-    <div className="flex gap-2 sm:gap-3 md:gap-4 justify-center">
+    <div className="flex gap-3 sm:gap-4">
       {links.map((link) => (
         <a
           key={link.url}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
           aria-label={link.label}
         >
-          <link.icon size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          <link.icon size={18} className="sm:size-20 md:size-24" />
           <span className="sr-only">{link.label}</span>
         </a>
       ))}

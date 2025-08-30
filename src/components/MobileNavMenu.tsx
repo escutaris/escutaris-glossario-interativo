@@ -18,9 +18,9 @@ const MobileNavMenu = () => {
     <div className="md:hidden fixed bottom-4 right-4 z-50">
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        variant="default"
+        variant="secondary"
         size="icon"
-        className="rounded-full shadow-lg h-12 w-12 focus:ring-2 focus:ring-offset-2 focus:ring-primary/50"
+        className="rounded-full shadow-lg bg-primary text-white h-12 w-12 focus:ring-2 focus:ring-offset-2 focus:ring-primary/50"
         aria-expanded={isOpen}
         aria-controls="mobile-nav-menu"
         aria-label={isOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
