@@ -3,26 +3,58 @@ import React from 'react';
 import ContactLinks from './ContactLinks';
 
 const GlossaryFooter = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="py-6 sm:py-8 md:py-12 border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-      <div className="container mx-auto px-4 text-center">
-        <img src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" alt="Escutaris Logo" className="h-12 sm:h-14 md:h-16 mx-auto mb-4 object-cover" />
-        <div className="max-w-2xl mx-auto space-y-6">
+    <footer className="bg-poseidon text-offwhite">
+      <div className="container mx-auto px-4 py-14 md:py-16">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-16">
           <div>
-            <h3 className="font-semibold text-primary-dark dark:text-gray-100 mb-2 text-xl sm:text-2xl">Fale com a Escutaris</h3>
-            <p className="text-textLight dark:text-gray-300 mb-4 text-sm sm:text-base">
-              Tem dúvidas sobre como aplicar os conhecimentos ou precisa de suporte personalizado? Nossa equipe está pronta te ajudar.
+            <img
+              src="/logo-escutaris-branco.png"
+              alt="Escutaris"
+              className="h-16 w-auto"
+            />
+            <p className="mt-6 max-w-md text-base text-offwhite/80">
+              A Escutaris trabalha com diagnóstico organizacional de fatores psicossociais,
+              com instrumentos validados e leitura por setor, para sustentar as decisões
+              exigidas pela NR-1.
             </p>
-            <div className="flex justify-center">
+            <p className="mt-6 font-display text-lg text-offwhite">
+              Ciência que escuta, soluções que transformam.
+            </p>
+          </div>
+
+          <div className="md:justify-self-end">
+            <h2 className="font-display text-xl font-bold text-offwhite">
+              Fale com a Escutaris
+            </h2>
+            <p className="mt-3 max-w-sm text-sm text-offwhite/80">
+              Para dúvidas sobre a aplicação desses conceitos ou sobre avaliação de fatores
+              psicossociais na sua organização.
+            </p>
+
+            <div className="mt-6">
               <ContactLinks />
             </div>
+
+            <a
+              href="https://wa.me/5571981357004"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-terracota px-6 py-3 text-sm font-medium text-offwhite transition-colors hover:bg-ares focus:outline-none focus-visible:ring-2 focus-visible:ring-offwhite focus-visible:ring-offset-2 focus-visible:ring-offset-poseidon"
+            >
+              Falar no WhatsApp
+            </a>
           </div>
-          <div className="pt-6 border-t border-gray-100 dark:border-gray-700">
-            <p className="text-textDark dark:text-gray-300 mb-2 text-sm">© 2025 Escutaris - Todos os direitos reservados</p>
-            <p className="text-textLight dark:text-gray-400 text-sm">
-              Desenvolvido com ❤️ para promover saúde mental nas organizações.
-            </p>
-          </div>
+        </div>
+
+        <div className="mt-12 border-t border-offwhite/15 pt-6 text-sm text-offwhite/60">
+          <p>© {year} Escutaris. Todos os direitos reservados.</p>
+          <p className="mt-1">
+            Material de apoio técnico. Não substitui avaliação profissional individual nem
+            dispensa a elaboração dos documentos previstos nas Normas Regulamentadoras.
+          </p>
         </div>
       </div>
     </footer>

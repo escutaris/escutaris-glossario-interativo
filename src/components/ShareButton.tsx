@@ -1,43 +1,40 @@
 
 import React from 'react';
-import { Share } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Share2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ShareButton = () => {
   const { toast } = useToast();
 
   const handleShare = async () => {
-    // Obter o URL atual da página
     const currentUrl = window.location.href;
 
     try {
-      // Verificar se a API de compartilhamento do navegador está disponível
       if (navigator.share) {
         await navigator.share({
-          title: 'Glossário Interativo de Fatores Psicossociais',
-          text: 'Confira este glossário interativo sobre fatores psicossociais para profissionais de SST!',
+          title: 'Glossário de fatores psicossociais no trabalho',
+          text: 'Glossário técnico da Escutaris sobre fatores psicossociais e NR-1.',
           url: currentUrl,
         });
-        toast({
-          title: "Compartilhado com sucesso",
-          description: "Obrigado por compartilhar nosso conteúdo!",
-          duration: 3000,
-        });
-      } else {
-        // Fallback para copiar o link para a área de transferência
-        await navigator.clipboard.writeText(currentUrl);
-        toast({
-          title: "Link copiado!",
-          description: "O link foi copiado para sua área de transferência.",
-          duration: 3000,
-        });
+        return;
       }
+
+      await navigator.clipboard.writeText(currentUrl);
+      toast({
+        title: "Link copiado",
+        description: "O endereço do glossário está na sua área de transferência.",
+        duration: 3000,
+      });
     } catch (error) {
+      // Cancelar o compartilhamento no celular cai aqui e não é erro
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        return;
+      }
+
       console.error('Erro ao compartilhar:', error);
       toast({
-        title: "Erro ao compartilhar",
-        description: "Não foi possível compartilhar o conteúdo. Tente novamente.",
+        title: "Não foi possível compartilhar",
+        description: "Copie o endereço direto da barra do navegador.",
         variant: "destructive",
         duration: 3000,
       });
@@ -45,16 +42,15 @@ const ShareButton = () => {
   };
 
   return (
-    <Button 
-      variant="outline" 
-      size="sm" 
+    <button
+      type="button"
       onClick={handleShare}
-      className="ml-2"
+      className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-secondary/40 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       aria-label="Compartilhar glossário"
     >
-      <Share size={18} className="mr-1" />
-      Compartilhar
-    </Button>
+      <Share2 size={16} aria-hidden="true" />
+      <span className="hidden sm:inline">Compartilhar</span>
+    </button>
   );
 };
 

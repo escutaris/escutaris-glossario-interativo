@@ -1,89 +1,58 @@
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import GlossaryTerm from './GlossaryTerm';
+import React from 'react';
+import TermCard from './TermCard';
 import { GlossarySectionProps } from '@/types/glossaryTypes';
 
-const GlossarySection = ({ title, terms, id }: GlossarySectionProps & { id: string }) => {
-  const [isAllExpanded, setIsAllExpanded] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  
-  // Referência para todos os elementos de accordion desta seção
-  const accordionElements = useRef<HTMLElement[]>([]);
+interface Props extends GlossarySectionProps {
+  id: string;
+  description: string;
+}
 
-  useEffect(() => {
-    // Atualiza a referência para todos os elementos de accordion
-    if (sectionRef.current) {
-      const elements = sectionRef.current.querySelectorAll('[data-state]');
-      accordionElements.current = Array.from(elements) as HTMLElement[];
-    }
-  }, [terms]);
-
-  // Função para alternar entre expandir e recolher todos os termos
-  const toggleAllExpanded = () => {
-    const newState = !isAllExpanded;
-    setIsAllExpanded(newState);
-    
-    // Expandir ou recolher todos os itens de acordo com o estado
-    if (sectionRef.current && accordionElements.current.length > 0) {
-      accordionElements.current.forEach(el => {
-        // Encontra o botão de acionamento (trigger) do accordion
-        const trigger = el.querySelector('[data-radix-collection-item]') as HTMLButtonElement;
-        if (trigger) {
-          const isCurrentlyOpen = el.getAttribute('data-state') === 'open';
-          
-          // Clica apenas se o estado atual for diferente do desejado
-          if ((newState && !isCurrentlyOpen) || (!newState && isCurrentlyOpen)) {
-            trigger.click();
-          }
-        }
-      });
-    }
-  };
-
+const GlossarySection = ({ title, description, terms, id }: Props) => {
   return (
-    <section id={id} className="py-6 md:py-10 scroll-mt-20" ref={sectionRef} aria-labelledby={`section-title-${id}`}>
+    <section
+      id={id}
+      className="scroll-mt-[160px] border-t border-border py-12 md:scroll-mt-[172px] md:py-16"
+      aria-labelledby={`section-title-${id}`}
+    >
       <div className="container mx-auto px-4">
-        <Card className="bg-card shadow-custom">
-          <CardHeader className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-            <CardTitle 
-              className="text-card-foreground text-xl sm:text-2xl md:text-3xl border-b-2 border-primary pb-2"
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <h2
               id={`section-title-${id}`}
+              className="font-display text-2xl font-bold text-foreground sm:text-3xl"
             >
               {title}
-            </CardTitle>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={toggleAllExpanded}
-              className="mt-2 sm:mt-0 text-xs sm:text-sm focus:ring-2 focus:ring-primary/50"
-              aria-pressed={isAllExpanded}
-            >
-              {isAllExpanded ? "Fechar todos" : "Expandir todos"}
-            </Button>
-          </CardHeader>
-          <CardContent className="pt-6">
-            <div role="region" aria-live="polite">
-              {terms.map((term) => (
-                <GlossaryTerm 
-                  key={term.id}
-                  id={term.id}
-                  title={term.title}
-                  description={term.description}
-                  example={term.example}
-                  iconName={term.iconName}
-                />
-              ))}
-              
-              {terms.length === 0 && (
-                <p className="text-center py-6 text-muted-foreground">
-                  Nenhum termo encontrado nesta seção.
-                </p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+              {description}
+            </p>
+          </div>
+
+          <p className="shrink-0 text-sm font-medium text-muted-foreground" aria-hidden="true">
+            {terms.length} {terms.length === 1 ? 'termo' : 'termos'}
+          </p>
+        </div>
+
+        {terms.length > 0 ? (
+          <div className="stagger mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {terms.map((term) => (
+              <TermCard
+                key={term.id}
+                id={term.id}
+                title={term.title}
+                description={term.description}
+                example={term.example}
+                aliases={term.aliases}
+                iconName={term.iconName}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-8 rounded-xl border border-dashed border-border bg-muted/40 px-6 py-8 text-center text-muted-foreground">
+            Nenhum termo desta seção corresponde à busca.
+          </p>
+        )}
       </div>
     </section>
   );

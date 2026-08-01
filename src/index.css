@@ -1,93 +1,89 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Garet — tipografia de título da identidade Escutaris v2 */
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Heavy.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 144 25% 25%;
+    /* Claro — fundo off-white, texto Poseidon */
+    --background: 45 22% 96%;
+    --foreground: 93 29% 14%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 144 25% 25%;
+    --card: 40 30% 99%;
+    --card-foreground: 93 29% 14%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 144 25% 25%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 93 29% 14%;
 
-    --primary: 144 35% 45%;
-    --primary-foreground: 0 0% 98%;
+    /* Verde-marca */
+    --primary: 101 25% 30%;
+    --primary-foreground: 45 22% 96%;
 
-    --secondary: 20 50% 60%;
-    --secondary-foreground: 0 0% 98%;
+    /* Terracota — assinatura e chamada */
+    --secondary: 15 53% 47%;
+    --secondary-foreground: 45 22% 96%;
 
-    --muted: 144 15% 95%;
-    --muted-foreground: 144 15% 55%;
+    --muted: 60 21% 93%;
+    --muted-foreground: 52 19% 39%;
 
-    --accent: 20 45% 95%;
-    --accent-foreground: 144 35% 35%;
+    --accent: 32 42% 94%;
+    --accent-foreground: 101 25% 30%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 12 76% 43%;
+    --destructive-foreground: 45 22% 96%;
 
-    --border: 144 15% 90%;
-    --input: 144 15% 90%;
-    --ring: 144 35% 45%;
+    --border: 33 17% 87%;
+    --input: 33 17% 87%;
+    --ring: 15 53% 47%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 144 25% 8%;
-    --foreground: 0 0% 95%;
+    /* Escuro — fundo Poseidon */
+    --background: 93 29% 9%;
+    --foreground: 45 22% 94%;
 
-    --card: 144 25% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 93 22% 13%;
+    --card-foreground: 45 22% 94%;
 
-    --popover: 144 25% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 93 22% 13%;
+    --popover-foreground: 45 22% 94%;
 
-    --primary: 144 40% 55%;
-    --primary-foreground: 144 25% 8%;
+    --primary: 101 22% 62%;
+    --primary-foreground: 93 29% 9%;
 
-    --secondary: 20 45% 55%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 15 58% 60%;
+    --secondary-foreground: 93 29% 9%;
 
-    --muted: 144 25% 15%;
-    --muted-foreground: 144 15% 70%;
+    --muted: 93 15% 17%;
+    --muted-foreground: 45 12% 72%;
 
-    --accent: 144 25% 15%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 93 15% 17%;
+    --accent-foreground: 45 22% 94%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 12 70% 52%;
+    --destructive-foreground: 45 22% 94%;
 
-    --border: 144 25% 20%;
-    --input: 144 25% 20%;
-    --ring: 144 40% 60%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 93 14% 22%;
+    --input: 93 14% 22%;
+    --ring: 15 58% 60%;
   }
 }
 
@@ -96,26 +92,42 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+    letter-spacing: -0.015em;
   }
 }
 
-/* Custom styles for accordion */
-.accordion-content {
-  overflow: hidden;
-  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+@layer utilities {
+  /* Entrada suave dos cards, escalonada por posição */
+  .stagger > * {
+    animation: fade-in 0.5s ease-out both;
+  }
+
+  .stagger > *:nth-child(1) { animation-delay: 0.04s; }
+  .stagger > *:nth-child(2) { animation-delay: 0.08s; }
+  .stagger > *:nth-child(3) { animation-delay: 0.12s; }
+  .stagger > *:nth-child(4) { animation-delay: 0.16s; }
+  .stagger > *:nth-child(5) { animation-delay: 0.20s; }
+  .stagger > *:nth-child(6) { animation-delay: 0.24s; }
+  .stagger > *:nth-child(n+7) { animation-delay: 0.28s; }
 }
 
-/* Staggered animation for glossary terms */
-.animate-fade-in {
-  animation-fill-mode: both;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.term:nth-child(1) { animation-delay: 0.1s; }
-.term:nth-child(2) { animation-delay: 0.2s; }
-.term:nth-child(3) { animation-delay: 0.3s; }
-.term:nth-child(4) { animation-delay: 0.4s; }
-.term:nth-child(5) { animation-delay: 0.5s; }
+  .stagger > * {
+    animation: none;
+  }
+}

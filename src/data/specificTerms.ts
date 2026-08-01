@@ -1,5 +1,7 @@
 
-export const specificTerms = [
+import { GlossaryTerm } from '@/types/glossaryTypes';
+
+export const specificTerms: GlossaryTerm[] = [
   {
     id: "estresse-ocupacional",
     title: "Estresse Ocupacional",
@@ -18,6 +20,7 @@ export const specificTerms = [
       title: "Exemplo Prático:",
       content: "Um profissional de saúde que trabalha em condições de sobrecarga constante, com recursos insuficientes e exposição a situações emocionalmente desgastantes, pode desenvolver exaustão física e emocional, despersonalização no atendimento aos pacientes e sensação de incompetência profissional."
     },
+    aliases: ["esgotamento profissional", "CID-11 QD85"],
     iconName: "icon-burnout"
   },
   {
@@ -27,6 +30,26 @@ export const specificTerms = [
     example: {
       title: "Exemplo Prático:",
       content: "Um gestor que constantemente humilha um subordinado em público, atribui tarefas impossíveis de serem realizadas, isola-o dos colegas ou desqualifica seu trabalho sem justificativa técnica está praticando assédio moral."
+    },
+    iconName: "icon-harassment"
+  },
+  {
+    id: "assedio-sexual",
+    title: "Assédio Sexual",
+    description: "Conduta de conotação sexual não desejada pela pessoa que a recebe, manifestada por palavras, gestos, contato físico ou insinuações, que constrange, humilha ou condiciona vantagens e permanência no emprego. Pode ocorrer com ou sem relação hierárquica e exige da organização canal de recebimento de denúncias, apuração e medidas de proteção a quem denuncia.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Comentários repetidos sobre o corpo de uma colega, convites insistentes após recusa explícita e insinuação de que a renovação do contrato depende de aceitar um encontro configuram assédio sexual e demandam apuração formal."
+    },
+    iconName: "icon-harassment"
+  },
+  {
+    id: "violencia-no-trabalho",
+    title: "Violência no Trabalho por Terceiros",
+    description: "Agressões verbais, ameaças, intimidações ou violência física praticadas por pessoas externas à organização, como clientes, usuários, pacientes, passageiros ou acompanhantes. É um fator de risco psicossocial próprio de atividades de atendimento ao público e exige medidas organizacionais, não apenas orientação individual.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Atendentes de uma unidade de saúde recebem ofensas diárias em filas de espera. As medidas eficazes envolvem organização do fluxo, informação clara sobre tempo de atendimento, protocolo de acionamento de apoio e registro dos episódios, e não apenas treinamento de controle emocional."
     },
     iconName: "icon-harassment"
   },
@@ -41,9 +64,20 @@ export const specificTerms = [
     iconName: "icon-mental-load"
   },
   {
+    id: "sobrecarga-e-subcarga",
+    title: "Sobrecarga e Subcarga",
+    description: "A carga de trabalho tem duas pontas. Sobrecarga é a exigência que ultrapassa os recursos disponíveis, com efeitos conhecidos sobre sono, atenção e saúde. Subcarga é a exigência abaixo da capacidade da pessoa, com ociosidade prolongada, tarefas sem sentido aparente ou uso mínimo das competências, e também produz adoecimento, desmotivação e sensação de inutilidade. A condição desejável fica no meio da régua, e não no extremo mais baixo.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Ao ler um resultado de carga mental, uma pontuação muito baixa em um setor não significa o melhor cenário possível. Pode indicar esvaziamento de função, o que pede investigação tanto quanto uma pontuação muito alta."
+    },
+    aliases: ["subcarga", "ociosidade"],
+    iconName: "icon-mental-load"
+  },
+  {
     id: "demandas-trabalho",
     title: "Demandas de Trabalho",
-    description: 'Quantidade, dificuldade e tempo para realizar as tarefas atribuídas. O problema não está no "muito trabalho", mas no desequilíbrio entre o que é exigido e os recursos disponíveis para dar conta — sejam eles cognitivos, emocionais ou organizacionais.',
+    description: 'Quantidade, dificuldade e tempo para realizar as tarefas atribuídas. O problema não está no "muito trabalho", mas no desequilíbrio entre o que é exigido e os recursos disponíveis para dar conta, sejam eles cognitivos, emocionais ou organizacionais.',
     example: {
       title: "Exemplo Prático:",
       content: "Alta demanda: Um analista precisa entregar relatórios diários com alto grau de detalhamento, atende a múltiplas reuniões consecutivas e ainda responde mensagens fora do horário de expediente, com metas que não cabem no tempo disponível. Acumula atividades de 2 a 3 colegas que não estão mais no setor.\nBaixa demanda: Um técnico passa a maior parte do expediente sem tarefas atribuídas, com longos períodos de ociosidade. Ele sente que suas habilidades são desperdiçadas e se questiona sobre sua utilidade para a equipe.\nDemanda moderada ou adequada: nível de exigência compatível com as capacidades e recursos do trabalhador. Essa é a condição ideal, pois favorece engajamento, produtividade e saúde."
@@ -58,7 +92,19 @@ export const specificTerms = [
       title: "Exemplo Prático:",
       content: "Um trabalhador experiente é obrigado a seguir um roteiro rígido e inflexível para realizar suas tarefas, sem permissão para adaptar processos ou tomar decisões básicas, mesmo quando sabe que existem formas mais eficientes e seguras de executar a atividade. Ele é visto como um simples executor de tarefas."
     },
+    aliases: ["controle sobre o trabalho", "latitude decisória"],
     iconName: "icon-autonomy"
+  },
+  {
+    id: "suporte-social",
+    title: "Suporte Social no Trabalho",
+    description: "Apoio prático e emocional disponível na chefia e entre colegas: orientação diante de dúvidas, ajuda em picos de demanda, escuta em situações difíceis e reconhecimento cotidiano. Funciona como amortecedor da exposição a demandas altas e costuma ser um dos fatores mais sensíveis à ação da liderança no curto prazo.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Dois setores enfrentam o mesmo pico de demanda no fechamento do mês. No setor em que o coordenador reorganiza prioridades e assume parte das tarefas, o pico passa. No setor em que cada pessoa se vira sozinha, o pico deixa afastamentos."
+    },
+    aliases: ["apoio da chefia", "apoio dos colegas"],
+    iconName: "icon-support"
   },
   {
     id: "justica-organizacional",
@@ -69,6 +115,23 @@ export const specificTerms = [
       content: "Dois funcionários com o mesmo cargo e desempenho recebem avaliações diferentes: um é promovido por ter proximidade com a chefia, enquanto o outro não recebe reconhecimento, gerando sentimento de injustiça e desvalorização."
     },
     iconName: "icon-balance"
+  },
+  {
+    id: "esforco-recompensa",
+    title: "Desequilíbrio Esforço-Recompensa",
+    description: "Situação em que o esforço investido no trabalho não encontra contrapartida proporcional em salário, estabilidade, perspectiva de carreira, estima ou reconhecimento. O modelo, formulado por Johannes Siegrist, associa esse desequilíbrio persistente a maior risco cardiovascular e de transtornos mentais comuns, sobretudo quando combinado a comprometimento excessivo com o trabalho.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Uma equipe assume por dois anos as atribuições de um setor extinto, sem revisão de cargo, sem adicional e sem previsão de recomposição do quadro. O esforço subiu, a recompensa não acompanhou, e o desgaste aparece nos indicadores de saúde e de rotatividade."
+    },
+    aliases: ["ERI", "Siegrist"],
+    iconName: "icon-balance"
+  },
+  {
+    id: "reconhecimento",
+    title: "Reconhecimento no Trabalho",
+    description: "Retorno concreto sobre a contribuição de uma pessoa ou equipe, por meio de feedback consistente, visibilidade do trabalho realizado, oportunidades de desenvolvimento e coerência entre o que se cobra e o que se valoriza. Não se resume a premiação ou elogio pontual, e sustenta sentido no trabalho.",
+    iconName: "icon-support"
   },
   {
     id: "organizacao-trabalho",
@@ -99,5 +162,65 @@ export const specificTerms = [
       content: "Um coordenador é cobrado para manter a equipe motivada e acolhedora, mas ao mesmo tempo recebe ordens da direção para cobrar metas inatingíveis com rigor, sendo pressionado a adotar uma postura contraditória."
     },
     iconName: "icon-stress"
+  },
+  {
+    id: "gestao-da-mudanca",
+    title: "Previsibilidade e Gestão da Mudança",
+    description: "Grau em que as pessoas recebem informação suficiente e a tempo sobre mudanças que afetam seu trabalho, como reestruturações, troca de sistemas, revisão de metas ou alteração de escalas. Mudança comunicada com antecedência e com espaço para dúvidas reduz insegurança; mudança anunciada por rumor produz o efeito oposto.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Uma empresa anuncia a fusão de dois setores na véspera da implantação. As equipes passam semanas sem saber quem responde pelo quê, e o desgaste aparece antes mesmo de qualquer efeito real da mudança."
+    },
+    aliases: ["comunicação de mudanças"],
+    iconName: "icon-organization"
+  },
+  {
+    id: "tempo-de-trabalho",
+    title: "Tempo de Trabalho e Direito à Desconexão",
+    description: "Conjunto de aspectos ligados a jornada, escalas, turnos, pausas, trabalho noturno, sobreaviso e disponibilidade fora do expediente. A possibilidade de se desconectar do trabalho no período de descanso sustenta a recuperação física e mental, e sua ausência mantém o organismo em estado de alerta prolongado.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Uma equipe recebe mensagens de demanda em grupo de aplicativo às 22h e nos fins de semana, com expectativa implícita de resposta imediata. O expediente termina no papel e continua na prática, o que impede a recuperação entre jornadas."
+    },
+    aliases: ["desconexão", "jornada", "teletrabalho"],
+    iconName: "icon-organization"
+  },
+  {
+    id: "trabalho-emocional",
+    title: "Trabalho Emocional",
+    description: "Esforço exigido para gerenciar as próprias emoções conforme o que a função espera, como manter cordialidade diante de hostilidade, sustentar entusiasmo em atendimento comercial ou conter reações em situações de sofrimento. Quando essa exigência é constante e não reconhecida, torna-se fonte relevante de desgaste.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Profissionais de atendimento a famílias em situação de perda precisam sustentar acolhimento durante todo o turno. Sem pausas reais, supervisão e espaço de elaboração, o custo aparece em exaustão e afastamentos."
+    },
+    iconName: "icon-mental-load"
+  },
+  {
+    id: "sofrimento-moral",
+    title: "Sofrimento Moral",
+    description: "Angústia que surge quando a pessoa sabe qual seria a conduta correta, mas o contexto de trabalho impede que ela aja de acordo com seus valores profissionais, por falta de recursos, imposição de metas ou ordens conflitantes. Frequente em saúde, assistência social, educação e segurança, e distinto do estresse por volume de tarefas.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Uma equipe de saúde precisa decidir a quem oferecer um recurso escasso, sabendo que a decisão deixará alguém sem atendimento adequado. A dor não vem da quantidade de trabalho, e sim do conflito com aquilo que a profissão considera certo."
+    },
+    aliases: ["moral injury", "dano moral ocupacional"],
+    iconName: "icon-stress"
+  },
+  {
+    id: "absenteismo-presenteismo",
+    title: "Absenteísmo e Presenteísmo",
+    description: "Absenteísmo é a ausência ao trabalho, por afastamento, falta ou atraso. Presenteísmo é a presença física sem condições plenas de desempenho, com dor, sofrimento psíquico ou exaustão. Os dois indicadores caminham juntos na leitura de riscos psicossociais, e o presenteísmo costuma anteceder o afastamento.",
+    example: {
+      title: "Exemplo Prático:",
+      content: "Um setor apresenta poucos afastamentos e queda consistente de produtividade, com aumento de erros e retrabalho. O indicador de ausência não acende, e ainda assim há sinal claro para investigar."
+    },
+    iconName: "icon-assessment"
+  },
+  {
+    id: "rotatividade",
+    title: "Rotatividade (Turnover)",
+    description: "Movimentação de entrada e saída de pessoas em um período. Quando concentrada em setores ou lideranças específicas, funciona como indicador indireto de fatores psicossociais, sobretudo se acompanhada de pedidos de demissão voluntários e de transferências solicitadas.",
+    aliases: ["turnover"],
+    iconName: "icon-assessment"
   }
 ];

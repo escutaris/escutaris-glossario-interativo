@@ -7,6 +7,8 @@ export interface GlossaryTerm {
     title: string;
     content: string;
   };
+  /** Siglas e sinônimos que também encontram o termo na busca */
+  aliases?: string[];
   iconName?: string;
 }
 

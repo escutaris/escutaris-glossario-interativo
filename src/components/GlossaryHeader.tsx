@@ -2,92 +2,62 @@
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 import ShareButton from './ShareButton';
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
+
+const sections = [
+  { id: 'conceitos-fundamentais', label: 'Conceitos' },
+  { id: 'termos-especificos', label: 'Termos' },
+  { id: 'instrumentos-avaliacao', label: 'Instrumentos' },
+  { id: 'aspectos-legais', label: 'Legislação' },
+];
 
 const GlossaryHeader = () => {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <header className="bg-card shadow-custom sticky top-0 z-50" role="banner">
-      <div className="container mx-auto px-4 py-4 md:py-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
-            <h1 className="text-card-foreground font-bold text-xl md:text-2xl lg:text-3xl sm:text-lg">
-              Glossário Interativo
-            </h1>
-            <p className="text-muted-foreground text-sm md:text-base">
-              Termos Técnicos em Fatores Psicossociais para Profissionais de SST
-            </p>
-          </div>
-          <div className="flex items-center space-x-4">
-            <ShareButton />
-            <NavigationMenu className="hidden md:flex">
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="focus:ring-2 focus:ring-primary/50">
-                    Navegação
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <nav>
-                      <ul className="grid gap-3 p-4 w-[400px] md:w-[500px] lg:w-[600px]" role="menu">
-                        <li role="menuitem">
-                          <button 
-                            onClick={() => scrollToSection("intro")}
-                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-                          >
-                            Introdução
-                          </button>
-                        </li>
-                        <li role="menuitem">
-                          <button 
-                            onClick={() => scrollToSection("conceitos-fundamentais")}
-                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-                          >
-                            Conceitos Fundamentais
-                          </button>
-                        </li>
-                        <li role="menuitem">
-                          <button 
-                            onClick={() => scrollToSection("termos-especificos")}
-                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-                          >
-                            Termos Específicos
-                          </button>
-                        </li>
-                        <li role="menuitem">
-                          <button 
-                            onClick={() => scrollToSection("instrumentos-avaliacao")}
-                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-                          >
-                            Instrumentos de Avaliação
-                          </button>
-                        </li>
-                        <li role="menuitem">
-                          <button 
-                            onClick={() => scrollToSection("aspectos-legais")}
-                            className="w-full text-left px-3 py-2 hover:bg-accent rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-                          >
-                            Aspectos Legais e Normativos
-                          </button>
-                        </li>
-                      </ul>
-                    </nav>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            <ThemeToggle />
-            <img 
-              src="/lovable-uploads/8ea8c2f7-db1c-499a-9258-bb28f00a1f66.png" 
-              alt="Logotipo da Escutaris - Empresa especializada em saúde mental e fatores psicossociais" 
-              className="h-10 md:h-12 lg:h-16" 
-            />
-          </div>
+    <header
+      className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
+      role="banner"
+    >
+      <div className="container mx-auto flex h-[72px] items-center justify-between gap-4 px-4 md:h-20">
+        <a
+          href="https://www.escutaris.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          aria-label="Site da Escutaris"
+        >
+          <img
+            src="/logo-escutaris.png"
+            alt="Escutaris"
+            className="h-10 w-auto md:h-12 dark:hidden"
+          />
+          <img
+            src="/logo-escutaris-branco.png"
+            alt="Escutaris"
+            className="hidden h-10 w-auto md:h-12 dark:block"
+          />
+        </a>
+
+        <nav aria-label="Seções do glossário" className="hidden md:block">
+          <ul className="flex items-center gap-1">
+            {sections.map((section) => (
+              <li key={section.id}>
+                <button
+                  onClick={() => scrollToSection(section.id)}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {section.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <ShareButton />
+          <ThemeToggle />
         </div>
       </div>
     </header>

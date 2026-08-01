@@ -1,27 +1,26 @@
 
 import { Globe, Instagram, Linkedin, Youtube } from "lucide-react";
 
-const ContactLinks = () => {
-  const links = [
-    { icon: Globe, url: "https://www.escutaris.com.br/", label: "Site da Escutaris" },
-    { icon: Instagram, url: "https://www.instagram.com/escutarissaudemental/", label: "Instagram da Escutaris" },
-    { icon: Linkedin, url: "https://www.linkedin.com/in/escutaris/", label: "LinkedIn da Escutaris" },
-    { icon: Youtube, url: "https://www.youtube.com/@Escutaris", label: "Canal do YouTube da Escutaris" }
-  ];
+const links = [
+  { icon: Globe, url: "https://www.escutaris.com.br/", label: "Site da Escutaris" },
+  { icon: Instagram, url: "https://www.instagram.com/escutarissaudemental/", label: "Instagram da Escutaris" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/escutaris/", label: "LinkedIn da Escutaris" },
+  { icon: Youtube, url: "https://www.youtube.com/@Escutaris", label: "Canal do YouTube da Escutaris" }
+];
 
+const ContactLinks = () => {
   return (
-    <div className="flex gap-3 sm:gap-4">
+    <div className="flex gap-3">
       {links.map((link) => (
         <a
           key={link.url}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary hover:text-secondary transition-colors p-2 rounded-full hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="rounded-full border border-offwhite/25 p-3 text-offwhite/80 transition-colors hover:border-terracota hover:bg-terracota hover:text-offwhite focus:outline-none focus-visible:ring-2 focus-visible:ring-offwhite"
           aria-label={link.label}
         >
-          <link.icon size={20} />
-          <span className="sr-only">{link.label}</span>
+          <link.icon size={20} aria-hidden="true" />
         </a>
       ))}
     </div>

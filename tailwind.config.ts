@@ -13,14 +13,15 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1.5rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1280px'
 			}
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+				display: ['Garet', 'Outfit', 'Segoe UI', 'sans-serif'],
+				sans: ['Poppins', 'Segoe UI', 'Tahoma', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -56,24 +57,30 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				/* Paleta Escutaris v2 — nomes da marca, para uso direto */
+				poseidon: '#222D19',
+				apollo: '#2B180A',
+				verde: '#46603A',
+				hermes: '#565E48',
+				athena: '#757050',
+				zeus: '#C98A42',
+				hades: '#A95821',
+				terracota: '#B95839',
+				ares: '#823112',
+				ember: '#BE3A1B',
+				offwhite: '#F8F7F4',
+				areia: '#F6F0E9',
+				oat: '#F0F0E8',
+				cinzaquente: '#E4DFD9',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				md: 'calc(var(--radius) - 4px)',
+				sm: 'calc(var(--radius) - 8px)'
 			},
 			boxShadow: {
-				'custom': '0 2px 10px rgba(0, 0, 0, 0.1)',
+				'soft': '0 1px 2px rgba(34, 45, 25, 0.04), 0 8px 24px -12px rgba(34, 45, 25, 0.18)',
+				'lift': '0 2px 4px rgba(34, 45, 25, 0.06), 0 16px 32px -16px rgba(34, 45, 25, 0.26)',
 			},
 			keyframes: {
 				'accordion-down': {

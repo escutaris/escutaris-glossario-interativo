@@ -9,7 +9,7 @@ const ThemeToggle = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
+
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
@@ -30,10 +30,10 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-secondary/20 hover:bg-secondary/30 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+      className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-secondary/40 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       aria-label={isDarkMode ? "Alternar para modo claro" : "Alternar para modo escuro"}
     >
-      {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+      {isDarkMode ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
     </button>
   );
 };
