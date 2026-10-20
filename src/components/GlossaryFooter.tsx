@@ -16,8 +16,11 @@ const GlossaryFooter = () => {
               className="h-16 w-auto"
             />
             <p className="mt-6 max-w-md text-base text-offwhite/80">
-              A Escutaris trabalha com diagnóstico organizacional de fatores psicossociais,
-              com instrumentos validados e leitura por setor, para sustentar as decisões
+              A Escutaris trabalha com{' '}
+              <a href="https://www.escutaris.com.br/diagnostico-dos-fatores-psicossociais-e-saude-mental-no-trabalho" className="underline underline-offset-4 hover:text-offwhite">
+                diagnóstico organizacional de fatores psicossociais
+              </a>
+              , com instrumentos validados e leitura por setor, para sustentar as decisões
               exigidas pela NR-1.
             </p>
             <p className="mt-6 font-display text-lg text-offwhite">
